@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豪華博彩娛樂模擬系統體驗 | 澳門至尊VIP娛樂平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c62828;
+            --primary-dark: #8b0000;
+            --primary-light: #ff5252;
+            --secondary-color: #0a0a0a;
+            --accent-gold: #ffd700;
+            --accent-gold-light: #ffed85;
+            --accent-silver: #c0c0c0;
+            --accent-bronze: #cd7f32;
+            --vip-purple: #9c27b0;
+            --diamond-blue: #00bcd4;
+            --emerald-green: #00c853;
+            --ruby-red: #ff1744;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #ff4444;
+            --dark-color: #1a1a1a;
+            --darker-color: #0a0a0a;
+            --light-color: #ffffff;
+            --light-gray: #f5f5f5;
+            --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --glow-gold: 0 0 20px rgba(255, 215, 0, 0.5);
+            --glow-purple: 0 0 20px rgba(156, 39, 176, 0.5);
+            --glow-blue: 0 0 20px rgba(0, 188, 212, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft JhengHei', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 30%, #0a0a1a 70%, #0a0a0a 100%);
+            color: var(--light-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(198, 40, 40, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(156, 39, 176, 0.1) 0%, transparent 35%),
+                radial-gradient(circle at 30% 70%, rgba(0, 188, 212, 0.1) 0%, transparent 30%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            z-index: -2;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 霓虹燈大標題 - 漸變色效果 */
+        .main-header {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, 
+                rgba(20, 20, 20, 0.95) 0%, 
+                rgba(30, 0, 0, 0.95) 50%, 
+                rgba(20, 0, 20, 0.95) 100%);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-heavy), inset 0 0 0 2px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .main-header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--primary-color), 
+                var(--accent-gold), 
+                var(--vip-purple), 
+                var(--diamond-blue),
+                var(--primary-color));
+            border-radius: var(--border-radius-xl);
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+            background-size: 400% 400%;
+        }
+        
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, 
+                #ffffff 0%, 
+                var(--accent-gold) 25%, 
+                #ffffff 50%, 
+                var(--accent-gold) 75%, 
+                #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(90deg, #ffd700, #ffed85, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* 頁面容器 */
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: pageFadeIn 0.5s ease forwards;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 導航按鈕 */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        /* 按鈕系統 */
+        .btn {
+            padding: 18px 36px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(198, 40, 40, 0.4);
+            font-size: 1.1rem;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(198, 40, 40, 0.6);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, var(--accent-gold), #ff8c00);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+        }
+        
+        .btn-purple {
+            background: linear-gradient(135deg, var(--vip-purple), #7b1fa2);
+            box-shadow: 0 5px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        .btn-purple:hover {
+            background: linear-gradient(135deg, #ba68c8, var(--vip-purple));
+        }
+        
+        .btn-blue {
+            background: linear-gradient(135deg, var(--diamond-blue), #0097a7);
+            box-shadow: 0 5px 20px rgba(0, 188, 212, 0.4);
+        }
+        
+        .btn-blue:hover {
+            background: linear-gradient(135deg, #80deea, var(--diamond-blue));
+        }
+        
+        .btn-green {
+            background: linear-gradient(135deg, var(--success-color), #2e7d32);
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-green:hover {
+            background: linear-gradient(135deg, #66bb6a, var(--success-color));
+        }
+        
+        /* 類別選擇邊框 */
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .category-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border-radius: var(--border-radius-xl);
+            padding: 30px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-box:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-heavy), var(--glow-gold);
+        }
+        
+        .category-icon {
+            font-size: 4rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .category-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        /* 遊戲說明系統 */
+        .instructions-container {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 20, 0, 0.8));
+            border-radius: var(--border-radius-xl);
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: var(--shadow-heavy);
+            border: 2px solid rgba(0, 255, 0, 0.3);
+        }
+        
+        .instruction-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 255, 0, 0.05);
+            border-radius: var(--border-radius);
+            border-left: 4px solid #00c853;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00c853, #00ff00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--darker-color);
+            flex-shrink: 0;
+        }
+        
+        /* 遊戲模擬區域 */
+        .game-simulation {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 0, 0, 0.8));
+            border-radius: var(--border-radius-xl);
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: var(--shadow-heavy);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-simulation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-gold), var(--vip-purple));
+        }
+        
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .balance-display {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(30, 0, 0, 0.9));
+            padding: 20px 35px;
+            border-radius: var(--border-radius-lg);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow-medium);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            min-width: 300px;
+        }
+        
+        /* 賭枱樣式 */
+        .betting-table {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 12px;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+            border-radius: var(--border-radius-lg);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .bet-cell {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bet-cell:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .bet-cell.selected {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(255, 215, 0, 0.3));
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+            color: var(--darker-color);
+            font-weight: 900;
+        }
+        
+        /* 卡片樣式 */
+        .card {
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #c62828;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 老虎機樣式 */
+        .slot-machine {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            perspective: 1000px;
+        }
+        
+        .slot-reel {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4), 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 輪盤樣式 */
+        .roulette-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 40px 0;
+        }
+        
+        .roulette-wheel {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: conic-gradient(
+                red 0deg 15deg,
+                black 15deg 30deg,
+                red 30deg 45deg,
+                black 45deg 60deg,
+                red 60deg 75deg,
+                black 75deg 90deg,
+                red 90deg 105deg,
+                black 105deg 120deg,
+                red 120deg 135deg,
+                black 135deg 150deg,
+                red 150deg 165deg,
+                black 165deg 180deg,
+                red 180deg 195deg,
+                black 195deg 210deg,
+                red 210deg 225deg,
+                black 225deg 240deg,
+                red 240deg 255deg,
+                black 255deg 270deg,
+                red 270deg 285deg,
+                black 285deg 300deg,
+                red 300deg 315deg,
+                black 315deg 330deg,
+                red 330deg 345deg,
+                black 345deg 360deg
+            );
+            position: relative;
+            transition: transform 4s cubic-bezier(0.2, 0.8, 0.3, 1);
+            margin-bottom: 40px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(0, 0, 0, 0.5);
+            border: 8px solid var(--accent-gold);
+        }
+        
+        .roulette-pointer {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid var(--accent-gold);
+            z-index: 10;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+        }
+        
+        /* 提示系統 */
+        .hint-box {
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(0, 188, 212, 0.05));
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--diamond-blue);
+        }
+        
+        .hint-title {
+            font-weight: 700;
+            color: var(--diamond-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 頁腳 */
+        .main-footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(30, 0, 0, 0.9));
+            border-radius: var(--border-radius-xl);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 3px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+        
+        .disclaimer {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 152, 0, 0.1));
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            margin-top: 40px;
+            border-left: 6px solid var(--warning-color);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* 手機版適應 */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-title {
+                font-size: 2.8rem;
+            }
+            
+            .category-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .category-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .balance-display {
+                min-width: 100%;
+                justify-content: center;
+                font-size: 1.8rem;
+                padding: 15px 25px;
+            }
+            
+            .game-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .betting-table {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .category-box {
+                padding: 20px;
+            }
+            
+            .category-icon {
+                font-size: 3rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* 載入動畫 */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(255, 215, 0, 0.3);
+            border-top-color: var(--accent-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 主頁 -->
+        <div id="main-page" class="page active">
+            <!-- 大標題 -->
+            <header class="main-header">
+                <h1 class="main-title">豪華博彩娛樂模擬系統體驗</h1>
+                <p class="subtitle">澳門至尊VIP娛樂平台 | 真實模擬 | 獨立頁面系統</p>
+            </header>
+            
+            <!-- 遊戲簡介 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 20px; background: linear-gradient(90deg, var(--accent-gold), #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    歡迎來到澳門豪華博彩模擬平台
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+                    體驗最真實的澳門博彩娛樂環境，包含多種經典博彩遊戲、專業工具系統和多層級VIP體驗。所有遊戲使用虛擬貨幣，僅供娛樂和教育目的。
+                </p>
+                
+                <!-- 平台操作指南按鈕 -->
+                <div style="margin: 40px 0;">
+                    <button class="btn btn-green" onclick="showPage('instructions-page')">
+                        <i class="fas fa-book"></i> 平台操作指南
+                    </button>
+                </div>
+                
+                <!-- 提示 -->
+                <div class="hint-box" style="max-width: 800px; margin: 30px auto;">
+                    <div class="hint-title">
+                        <i class="fas fa-info-circle"></i> 平台使用提示
+                    </div>
+                    <p>1. 點擊下方類別選擇進入不同遊戲區域<br>
+                    2. 每個頁面都是獨立的，不會互相干擾<br>
+                    3. 使用「平台操作指南」了解詳細玩法<br>
+                    4. 所有頁面都有返回主頁和上一頁按鈕</p>
+                </div>
+            </div>
+            
+            <!-- 類別選擇邊框 -->
+            <h3 style="text-align: center; font-size: 1.8rem; margin: 40px 0 20px; color: var(--accent-gold);">
+                <i class="fas fa-th-large"></i> 選擇遊戲類別
+            </h3>
+            
+            <div class="category-container">
+                <div class="category-box" onclick="showPage('poker-page')">
+                    <div class="category-icon">
+                        <i class="fas fa-club"></i>
+                    </div>
+                    <div class="category-title">紙牌遊戲</div>
+                    <div class="category-description">
+                        包含德州撲克、二十一點、百家樂等經典紙牌遊戲，與AI智能對手對戰。
+                    </div>
+                </div>
+                
+                <div class="category-box" onclick="showPage('mahjong-page')">
+                    <div class="category-icon">
+                        <i class="fas fa-chess-board"></i>
+                    </div>
+                    <div class="category-title">澳門麻將</div>
+                    <div class="category-description">
+                        經典澳門麻將玩法，包含多種番型和規則，真實計番系統。
+                    </div>
+                </div>
+                
+                <div class="category-box" onclick="showPage('roulette-page')">
+                    <div class="category-icon">
+                        <i class="fas fa-circle-notch"></i>
+                    </div>
+                    <div class="category-title">輪盤賭博</div>
+                    <div class="category-description">
+                        歐洲輪盤遊戲，多種投注方式，實時動畫效果，真實賠率計算。
+                    </div>
+                </div>
+                
+                <div class="category-box" onclick="showPage('slot-page')">
+                    <div class="category-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div class="category-title">老虎機</div>
+                    <div class="category-description">
+                        經典老虎機遊戲，多種主題和累積獎金，簡單易玩。
+                    </div>
+                </div>
+                
+                <div class="category-box" onclick="showPage('tools-page')">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="category-title">專業工具</div>
+                    <div class="category-description">
+                        賠率計算器、資金管理、勝率分析等專業工具，輔助遊戲決策。
+                    </div>
+                </div>
+                
+                <div class="category-box" onclick="showPage('vip-page')">
+                    <div class="category-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="category-title">VIP專區</div>
+                    <div class="category-description">
+                        多層級VIP系統，專屬功能和獎勵，至尊娛樂體驗。
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 下一頁按鈕 -->
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn btn-gold" onclick="showPage('instructions-page')">
+                    <i class="fas fa-arrow-right"></i> 下一頁：平台操作指南
+                </button>
+            </div>
+            
+            <!-- 免責聲明 -->
+            <div class="disclaimer" style="margin-top: 60px;">
+                <h4 style="color: var(--warning-color); margin-bottom: 15px;">
+                    <i class="fas fa-exclamation-triangle"></i> 重要聲明
+                </h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    本系統為純粹的博彩娛樂模擬體驗平台，僅供娛樂和教育目的。所有遊戲使用虛擬貨幣，不涉及真實金錢交易。本系統不鼓勵真實賭博行為，實際賭博可能導致嚴重的財務損失和心理問題。
+                </p>
+            </div>
+        </div>
+        
+        <!-- 平台操作指南頁 -->
+        <div id="instructions-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('main-page')">
+                    <i class="fas fa-arrow-left"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--success-color), #66bb6a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    <i class="fas fa-book"></i> 平台操作指南
+                </h2>
+                <p style="color: rgba(255,255,255,0.8);">詳細了解平台操作方法和遊戲規則</p>
+            </div>
+            
+            <div class="instructions-container">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">平台導航</h3>
+                        <p>每個頁面都是獨立的，使用頁面頂部的「返回主頁」或「返回上一頁」按鈕進行導航。主頁包含所有類別選擇，進入後續頁面體驗具體遊戲。</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">遊戲選擇</h3>
+                        <p>在主頁選擇您感興趣的遊戲類別，系統將進入對應的模擬頁面。每個遊戲頁面都包含完整的遊戲設置和AI對手選擇功能。</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">虛擬資金</h3>
+                        <p>系統使用虛擬貨幣進行遊戲，不涉及真實金錢交易。所有玩家起始資金相同，可通過遊戲勝利增加虛擬資金。</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">AI對手</h3>
+                        <p>每個遊戲都配備多個難度級別的AI對手，從初學者到專家級。可以根據自己的水平選擇合適的對手進行對戰。</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">專業工具</h3>
+                        <p>平台提供多種專業工具，包括賠率計算器、資金管理工具和勝率分析，幫助您做出更明智的遊戲決策。</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">VIP系統</h3>
+                        <p>通過遊戲表現可以提升VIP等級，解鎖更多專屬功能和獎勵。VIP等級從青銅到鑽石，提供不同級別的娛樂體驗。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('main-page')">
+                    <i class="fas fa-arrow-left"></i> 返回主頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('poker-page')">
+                    下一頁：紙牌遊戲 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 紙牌遊戲頁 -->
+        <div id="poker-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('instructions-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn" onclick="showPage('main-page')" style="margin-left: 15px;">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div class="game-header">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--accent-gold), #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        <i class="fas fa-club"></i> 紙牌遊戲模擬
+                    </h2>
+                    <p style="color: rgba(255,255,255,0.8);">包含德州撲克、二十一點、百家樂等經典紙牌遊戲</p>
+                </div>
+                
+                <div class="balance-display">
+                    <div>
+                        <div style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">虛擬資金</div>
+                        <div><i class="fas fa-coins"></i> 1,250,000 MOP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hint-box">
+                <div class="hint-title">
+                    <i class="fas fa-info-circle"></i> 遊戲提示
+                </div>
+                <p>選擇您想玩的紙牌遊戲，設置下注金額和AI對手難度，點擊「開始遊戲」按鈕開始模擬。</p>
+            </div>
+            
+            <!-- 遊戲選擇 -->
+            <div style="margin: 40px 0;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--accent-gold);">
+                    <i class="fas fa-gamepad"></i> 選擇遊戲類型
+                </h3>
+                
+                <div style="display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap;">
+                    <button class="btn" onclick="selectPokerGame('texas')">
+                        <i class="fas fa-club"></i> 德州撲克
+                    </button>
+                    <button class="btn" onclick="selectPokerGame('blackjack')">
+                        <i class="fas fa-spade"></i> 二十一點
+                    </button>
+                    <button class="btn" onclick="selectPokerGame('baccarat')">
+                        <i class="fas fa-gem"></i> 百家樂
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 德州撲克遊戲區域 -->
+            <div id="texas-game" class="game-simulation">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--accent-gold);">
+                    德州撲克模擬
+                </h3>
+                
+                <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
+                    <!-- AI玩家1 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; border: 3px solid var(--accent-gold);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">AI玩家1</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">籌碼: 50,000</div>
+                    </div>
+                    
+                    <!-- AI玩家2 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--vip-purple), #7b1fa2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; border: 3px solid var(--accent-gold);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">AI玩家2</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">籌碼: 75,000</div>
+                    </div>
+                    
+                    <!-- 公共牌 -->
+                    <div style="text-align: center;">
+                        <div style="font-weight: 700; color: var(--accent-gold); margin-bottom: 15px;">公共牌</div>
+                        <div style="display: flex; gap: 10px; justify-content: center;">
+                            <div class="card">?</div>
+                            <div class="card">?</div>
+                            <div class="card">?</div>
+                            <div class="card">?</div>
+                            <div class="card">?</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 玩家 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-gold), #ff8c00); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--darker-color); border: 3px solid var(--accent-gold);">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">您</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">籌碼: 100,000</div>
+                    </div>
+                </div>
+                
+                <!-- 玩家手牌 -->
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <div style="font-weight: 700; color: var(--accent-gold); margin-bottom: 15px;">您的手牌</div>
+                    <div style="display: flex; gap: 20px; justify-content: center;">
+                        <div class="card" id="player-card1">A♠</div>
+                        <div class="card" id="player-card2">K♠</div>
+                    </div>
+                </div>
+                
+                <!-- 遊戲控制 -->
+                <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; flex-wrap: wrap;">
+                    <button class="btn btn-gold" onclick="playTexasPoker()">
+                        <i class="fas fa-play"></i> 開始新遊戲
+                    </button>
+                    <button class="btn" onclick="texasPokerAction('fold')">
+                        棄牌
+                    </button>
+                    <button class="btn" onclick="texasPokerAction('call')">
+                        跟注
+                    </button>
+                    <button class="btn" onclick="texasPokerAction('raise')">
+                        加注
+                    </button>
+                </div>
+                
+                <!-- 下注控制 -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <div style="margin-bottom: 15px; color: rgba(255,255,255,0.8);">下注金額</div>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <input type="range" min="100" max="5000" value="500" step="100" id="poker-bet-slider" style="width: 300px;">
+                        <div style="font-weight: 700; color: var(--accent-gold); font-size: 1.2rem;">
+                            <span id="poker-bet-amount">500</span> MOP
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 遊戲結果顯示 -->
+            <div id="poker-result" style="display: none; text-align: center; margin-top: 40px;">
+                <!-- 由JavaScript動態生成 -->
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('instructions-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('mahjong-page')">
+                    下一頁：澳門麻將 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 澳門麻將頁 -->
+        <div id="mahjong-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('poker-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn" onclick="showPage('main-page')" style="margin-left: 15px;">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div class="game-header">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--accent-gold), #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        <i class="fas fa-chess-board"></i> 澳門麻將模擬
+                    </h2>
+                    <p style="color: rgba(255,255,255,0.8);">經典澳門麻將玩法，包含多種番型和規則</p>
+                </div>
+                
+                <div class="balance-display">
+                    <div>
+                        <div style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">虛擬資金</div>
+                        <div><i class="fas fa-coins"></i> 1,250,000 MOP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hint-box">
+                <div class="hint-title">
+                    <i class="fas fa-info-circle"></i> 遊戲提示
+                </div>
+                <p>澳門麻將使用144張牌，包含花牌。可以吃、碰、槓，胡牌需要至少一番。選擇AI對手難度後開始遊戲。</p>
+            </div>
+            
+            <!-- 麻將遊戲區域 -->
+            <div class="game-simulation">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--accent-gold);">
+                    澳門麻將遊戲
+                </h3>
+                
+                <!-- 麻將桌 -->
+                <div style="position: relative; height: 500px; background: linear-gradient(135deg, #2e8b57, #228b22); border-radius: var(--border-radius-lg); border: 10px solid #8b4513; margin-bottom: 40px; overflow: hidden;">
+                    <!-- 東風玩家 -->
+                    <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; border: 2px solid var(--accent-gold);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">東風 (AI)</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">13張牌</div>
+                    </div>
+                    
+                    <!-- 南風玩家 -->
+                    <div style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); text-align: center;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--vip-purple), #7b1fa2); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; border: 2px solid var(--accent-gold);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">南風 (AI)</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">13張牌</div>
+                    </div>
+                    
+                    <!-- 西風玩家 -->
+                    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--diamond-blue), #0097a7); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; border: 2px solid var(--accent-gold);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">西風 (AI)</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">13張牌</div>
+                    </div>
+                    
+                    <!-- 北風玩家 (您) -->
+                    <div style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); text-align: center;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-gold), #ff8c00); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--darker-color); border: 2px solid var(--accent-gold);">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold);">北風 (您)</div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">13張牌</div>
+                    </div>
+                    
+                    <!-- 牌牆 -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                        <div style="font-weight: 700; color: var(--accent-gold); margin-bottom: 15px;">牌牆剩餘</div>
+                        <div style="font-size: 3rem; color: rgba(255,255,255,0.7);">
+                            72
+                        </div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">張牌</div>
+                    </div>
+                </div>
+                
+                <!-- 玩家手牌區域 -->
+                <div style="margin-bottom: 40px;">
+                    <h4 style="color: var(--accent-gold); margin-bottom: 15px;">您的手牌</h4>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; min-height: 80px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: var(--border-radius);">
+                        <div style="width: 60px; height: 80px; background: linear-gradient(135deg, #ffffff, #f0f0f0); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #c62828; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            一萬
+                        </div>
+                        <div style="width: 60px; height: 80px; background: linear-gradient(135deg, #ffffff, #f0f0f0); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #c62828; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            二萬
+                        </div>
+                        <div style="width: 60px; height: 80px; background: linear-gradient(135deg, #ffffff, #f0f0f0); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #c62828; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            三萬
+                        </div>
+                        <div style="width: 60px; height: 80px; background: linear-gradient(135deg, #ffffff, #f0f0f0); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #c62828; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            東風
+                        </div>
+                        <div style="width: 60px; height: 80px; background: linear-gradient(135deg, #ffffff, #f0f0f0); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #c62828; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            發財
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 遊戲控制 -->
+                <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
+                    <button class="btn btn-gold" onclick="playMahjong()">
+                        <i class="fas fa-play"></i> 開始新局
+                    </button>
+                    <button class="btn" onclick="mahjongAction('draw')">
+                        摸牌
+                    </button>
+                    <button class="btn" onclick="mahjongAction('discard')">
+                        出牌
+                    </button>
+                    <button class="btn" onclick="mahjongAction('pong')">
+                        碰
+                    </button>
+                    <button class="btn" onclick="mahjongAction('kong')">
+                        槓
+                    </button>
+                    <button class="btn" onclick="mahjongAction('win')">
+                        胡牌
+                    </button>
+                </div>
+                
+                <!-- 遊戲信息 -->
+                <div style="text-align: center; color: rgba(255,255,255,0.8);">
+                    當前圈風: <span style="color: var(--accent-gold); font-weight: 700;">東風圈</span> | 
+                    當前局數: <span style="color: var(--accent-gold); font-weight: 700;">第1局</span> | 
+                    底注: <span style="color: var(--accent-gold); font-weight: 700;">100 MOP</span>
+                </div>
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('poker-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('roulette-page')">
+                    下一頁：輪盤賭博 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 輪盤賭博頁 -->
+        <div id="roulette-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('mahjong-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn" onclick="showPage('main-page')" style="margin-left: 15px;">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div class="game-header">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--accent-gold), #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        <i class="fas fa-circle-notch"></i> 輪盤賭博模擬
+                    </h2>
+                    <p style="color: rgba(255,255,255,0.8);">歐洲輪盤遊戲，37個數字，多種投注組合</p>
+                </div>
+                
+                <div class="balance-display">
+                    <div>
+                        <div style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">虛擬資金</div>
+                        <div><i class="fas fa-coins"></i> 1,250,000 MOP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hint-box">
+                <div class="hint-title">
+                    <i class="fas fa-info-circle"></i> 遊戲提示
+                </div>
+                <p>輪盤有37個數字（0-36），0為綠色，其餘紅色和黑色交替。可以投注紅色/黑色、單一數字、數字組合等。</p>
+            </div>
+            
+            <!-- 輪盤遊戲區域 -->
+            <div class="game-simulation">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--accent-gold);">
+                    歐洲輪盤
+                </h3>
+                
+                <!-- 輪盤 -->
+                <div class="roulette-container">
+                    <div class="roulette-pointer"></div>
+                    <div class="roulette-wheel" id="roulette-wheel"></div>
+                </div>
+                
+                <!-- 投注區域 -->
+                <div style="margin: 40px 0;">
+                    <h4 style="color: var(--accent-gold); margin-bottom: 20px; text-align: center;">投注區域</h4>
+                    <div class="betting-table">
+                        <!-- 數字投注區域 -->
+                        <div class="bet-cell" onclick="selectRouletteBet('0')">0</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('1')">1</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('2')">2</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('3')">3</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('4')">4</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('5')">5</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('6')">6</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('7')">7</div>
+                        
+                        <!-- 第二排 -->
+                        <div class="bet-cell" onclick="selectRouletteBet('8')">8</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('9')">9</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('10')">10</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('11')">11</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('12')">12</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('13')">13</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('14')">14</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('15')">15</div>
+                        
+                        <!-- 第三排 -->
+                        <div class="bet-cell" onclick="selectRouletteBet('16')">16</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('17')">17</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('18')">18</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('19')">19</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('20')">20</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('21')">21</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('22')">22</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('23')">23</div>
+                        
+                        <!-- 第四排 -->
+                        <div class="bet-cell" onclick="selectRouletteBet('24')">24</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('25')">25</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('26')">26</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('27')">27</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('28')">28</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('29')">29</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('30')">30</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('31')">31</div>
+                        
+                        <!-- 第五排 -->
+                        <div class="bet-cell" onclick="selectRouletteBet('32')">32</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('33')">33</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('34')">34</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('35')">35</div>
+                        <div class="bet-cell" onclick="selectRouletteBet('36')">36</div>
+                        
+                        <!-- 特殊投注 -->
+                        <div class="bet-cell" style="grid-column: span 2; background: linear-gradient(135deg, rgba(255,0,0,0.3), rgba(255,0,0,0.2));" onclick="selectRouletteBet('red')">
+                            紅色
+                        </div>
+                        <div class="bet-cell" style="grid-column: span 2; background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.2));" onclick="selectRouletteBet('black')">
+                            黑色
+                        </div>
+                        <div class="bet-cell" style="grid-column: span 2; background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(255,215,0,0.2));" onclick="selectRouletteBet('even')">
+                            偶數
+                        </div>
+                        <div class="bet-cell" style="grid-column: span 2; background: linear-gradient(135deg, rgba(0,188,212,0.3), rgba(0,188,212,0.2));" onclick="selectRouletteBet('odd')">
+                            奇數
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 遊戲控制 -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <div style="margin-bottom: 20px;">
+                        <div style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">下注金額 (MOP)</div>
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                            <input type="range" min="10" max="1000" value="100" step="10" id="roulette-bet-slider" style="width: 300px;">
+                            <div style="font-weight: 700; color: var(--accent-gold); font-size: 1.2rem;">
+                                <span id="roulette-bet-amount">100</span> MOP
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">當前投注</div>
+                        <div style="font-weight: 700; color: var(--accent-gold); font-size: 1.2rem;" id="current-bet">
+                            未選擇
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-gold" onclick="spinRoulette()" id="spin-button">
+                        <i class="fas fa-play"></i> 旋轉輪盤
+                    </button>
+                </div>
+                
+                <!-- 最近結果 -->
+                <div style="text-align: center;">
+                    <div style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">最近結果</div>
+                    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                        <div style="width: 40px; height: 40px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">17</div>
+                        <div style="width: 40px; height: 40px; background: red; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">5</div>
+                        <div style="width: 40px; height: 40px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">32</div>
+                        <div style="width: 40px; height: 40px; background: red; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">21</div>
+                        <div style="width: 40px; height: 40px; background: green; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('mahjong-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('slot-page')">
+                    下一頁：老虎機 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 老虎機頁 -->
+        <div id="slot-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('roulette-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn" onclick="showPage('main-page')" style="margin-left: 15px;">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div class="game-header">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--accent-gold), #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        <i class="fas fa-sliders-h"></i> 老虎機模擬
+                    </h2>
+                    <p style="color: rgba(255,255,255,0.8);">經典老虎機遊戲，多種主題和累積獎金</p>
+                </div>
+                
+                <div class="balance-display">
+                    <div>
+                        <div style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">虛擬資金</div>
+                        <div><i class="fas fa-coins"></i> 1,250,000 MOP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hint-box">
+                <div class="hint-title">
+                    <i class="fas fa-info-circle"></i> 遊戲提示
+                </div>
+                <p>選擇下注金額和支付線數量，點擊「旋轉」按鈕開始遊戲。匹配相同符號可以贏得獎金，三個7為最高獎金。</p>
+            </div>
+            
+            <!-- 老虎機遊戲區域 -->
+            <div class="game-simulation">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--accent-gold);">
+                    豪華老虎機
+                </h3>
+                
+                <!-- 老虎機 -->
+                <div style="background: linear-gradient(135deg, #800000, #a52a2a); border-radius: var(--border-radius-lg); padding: 30px; border: 10px solid #8b4513; margin-bottom: 40px;">
+                    <!-- 累積獎金 -->
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="color: rgba(255,255,255,0.8); margin-bottom: 5px;">累積獎金</div>
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--accent-gold);">1,248,750 MOP</div>
+                    </div>
+                    
+                    <!-- 滾輪 -->
+                    <div class="slot-machine">
+                        <div class="slot-reel" id="slot-reel1">🍒</div>
+                        <div class="slot-reel" id="slot-reel2">7️⃣</div>
+                        <div class="slot-reel" id="slot-reel3">🔔</div>
+                        <div class="slot-reel" id="slot-reel4">⭐</div>
+                        <div class="slot-reel" id="slot-reel5">🍋</div>
+                    </div>
+                    
+                    <!-- 支付線 -->
+                    <div style="display: flex; justify-content: center; margin-top: 30px;">
+                        <div style="width: 100%; height: 3px; background: var(--accent-gold); position: relative;">
+                            <div style="position: absolute; top: -8px; left: 20%; width: 20px; height: 20px; background: var(--accent-gold); border-radius: 50%;"></div>
+                            <div style="position: absolute; top: -8px; left: 40%; width: 20px; height: 20px; background: var(--accent-gold); border-radius: 50%;"></div>
+                            <div style="position: absolute; top: -8px; left: 60%; width: 20px; height: 20px; background: var(--accent-gold); border-radius: 50%;"></div>
+                            <div style="position: absolute; top: -8px; left: 80%; width: 20px; height: 20px; background: var(--accent-gold); border-radius: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 遊戲控制 -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap;">
+                        <div>
+                            <div style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">下注金額 (MOP)</div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <button class="btn" style="padding: 10px 15px;" onclick="changeSlotBet(-10)">-10</button>
+                                <div style="font-weight: 700; color: var(--accent-gold); font-size: 1.5rem; min-width: 80px;" id="slot-bet-amount">50</div>
+                                <button class="btn" style="padding: 10px 15px;" onclick="changeSlotBet(10)">+10</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">支付線</div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <button class="btn" style="padding: 10px 15px;" onclick="changeSlotLines(-1)">-1</button>
+                                <div style="font-weight: 700; color: var(--accent-gold); font-size: 1.5rem; min-width: 80px;" id="slot-lines">3</div>
+                                <button class="btn" style="padding: 10px 15px;" onclick="changeSlotLines(1)">+1</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">總下注金額</div>
+                        <div style="font-weight: 700; color: var(--accent-gold); font-size: 2rem;" id="slot-total-bet">
+                            150 MOP
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-gold" onclick="spinSlots()" id="slot-spin-button" style="padding: 25px 50px; font-size: 1.5rem;">
+                        <i class="fas fa-play"></i> 旋轉
+                    </button>
+                </div>
+                
+                <!-- 賠率表 -->
+                <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: var(--border-radius);">
+                    <h4 style="color: var(--accent-gold); margin-bottom: 20px; text-align: center;">賠率表</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: var(--border-radius);">
+                            <span>🍒🍒🍒</span>
+                            <span style="color: var(--accent-gold); font-weight: 700;">10x</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: var(--border-radius);">
+                            <span>7️⃣7️⃣7️⃣</span>
+                            <span style="color: var(--accent-gold); font-weight: 700;">20x</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: var(--border-radius);">
+                            <span>🔔🔔🔔</span>
+                            <span style="color: var(--accent-gold); font-weight: 700;">15x</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: var(--border-radius);">
+                            <span>⭐⭐⭐</span>
+                            <span style="color: var(--accent-gold); font-weight: 700;">8x</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: var(--border-radius);">
+                            <span>🍋🍋🍋</span>
+                            <span style="color: var(--accent-gold); font-weight: 700;">5x</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('roulette-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('tools-page')">
+                    下一頁：專業工具 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 專業工具頁 -->
+        <div id="tools-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('slot-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn" onclick="showPage('main-page')" style="margin-left: 15px;">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--diamond-blue), #80deea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    <i class="fas fa-tools"></i> 專業工具系統
+                </h2>
+                <p style="color: rgba(255,255,255,0.8);">使用專業工具輔助遊戲決策，提高勝率和資金管理能力</p>
+            </div>
+            
+            <div class="hint-box">
+                <div class="hint-title">
+                    <i class="fas fa-calculator"></i> 工具使用提示
+                </div>
+                <p>專業工具可以幫助您計算賠率、管理資金、分析勝率和制定遊戲策略，提高遊戲表現。</p>
+            </div>
+            
+            <!-- 工具選擇 -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin: 40px 0;">
+                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border-radius: var(--border-radius-xl); padding: 30px; border: 2px solid rgba(255,215,0,0.2); cursor: pointer;" onclick="selectTool('odds')">
+                    <div style="font-size: 3rem; color: var(--diamond-blue); margin-bottom: 20px; text-align: center;">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div style="font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; text-align: center; color: var(--diamond-blue);">
+                        賠率計算器
+                    </div>
+                    <div style="color: rgba(255,255,255,0.7); text-align: center; line-height: 1.6;">
+                        計算各種投注組合的潛在回報、概率和期望值，支援自定義賠率和下注金額。
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border-radius: var(--border-radius-xl); padding: 30px; border: 2px solid rgba(255,215,0,0.2); cursor: pointer;" onclick="selectTool('bankroll')">
+                    <div style="font-size: 3rem; color: var(--success-color); margin-bottom: 20px; text-align: center;">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div style="font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; text-align: center; color: var(--success-color);">
+                        資金管理
+                    </div>
+                    <div style="color: rgba(255,255,255,0.7); text-align: center; line-height: 1.6;">
+                        設定下注限制、止損止盈點，管理遊戲資金，提供資金分配建議和風險控制。
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border-radius: var(--border-radius-xl); padding: 30px; border: 2px solid rgba(255,215,0,0.2); cursor: pointer;" onclick="selectTool('analysis')">
+                    <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px; text-align: center;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div style="font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; text-align: center; color: var(--accent-gold);">
+                        勝率分析
+                    </div>
+                    <div style="color: rgba(255,255,255,0.7); text-align: center; line-height: 1.6;">
+                        分析您的遊戲歷史數據，提供勝率統計、熱門遊戲和時段分析，幫助制定策略。
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 工具詳細區域 -->
+            <div id="tool-detail" style="margin-top: 40px;">
+                <!-- 由JavaScript動態生成 -->
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('slot-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('vip-page')">
+                    下一頁：VIP專區 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- VIP專區頁 -->
+        <div id="vip-page" class="page">
+            <!-- 返回按鈕 -->
+            <div style="margin-bottom: 30px;">
+                <button class="btn" onclick="showPage('tools-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn" onclick="showPage('main-page')" style="margin-left: 15px;">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 頁面標題 -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(90deg, var(--vip-purple), #ba68c8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    <i class="fas fa-crown"></i> VIP專屬特權
+                </h2>
+                <p style="color: rgba(255,255,255,0.8);">尊享VIP專屬功能、更高獎金和獨家遊戲體驗</p>
+            </div>
+            
+            <div class="hint-box">
+                <div class="hint-title">
+                    <i class="fas fa-crown"></i> VIP升級提示
+                </div>
+                <p>提升遊戲等級、增加遊戲時間和盈利金額可以提升VIP等級，解鎖更多專屬功能。</p>
+            </div>
+            
+            <!-- VIP等級系統 -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin: 40px 0;">
+                <div style="background: linear-gradient(135deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.1)); border-radius: var(--border-radius-xl); padding: 25px; text-align: center; border: 2px solid var(--accent-bronze);">
+                    <div style="font-size: 3rem; color: var(--accent-bronze); margin-bottom: 15px;">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 style="color: var(--accent-bronze); margin-bottom: 10px;">青銅會員</h3>
+                    <div style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                        <div>• 基礎遊戲功能</div>
+                        <div>• 基礎AI對手</div>
+                        <div>• 每日登入獎勵</div>
+                    </div>
+                    <div style="color: var(--accent-bronze); font-weight: 700;">等級要求: 1-3</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1)); border-radius: var(--border-radius-xl); padding: 25px; text-align: center; border: 2px solid var(--accent-silver);">
+                    <div style="font-size: 3rem; color: var(--accent-silver); margin-bottom: 15px;">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 style="color: var(--accent-silver); margin-bottom: 10px;">白銀會員</h3>
+                    <div style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                        <div>• 進階遊戲功能</div>
+                        <div>• 中級AI對手</div>
+                        <div>• 更高獎金池</div>
+                        <div>• 專屬客服</div>
+                    </div>
+                    <div style="color: var(--accent-silver); font-weight: 700;">等級要求: 4-6</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1)); border-radius: var(--border-radius-xl); padding: 25px; text-align: center; border: 2px solid var(--accent-gold);">
+                    <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 15px;">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: 10px;">黃金會員</h3>
+                    <div style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                        <div>• 高級遊戲功能</div>
+                        <div>• 高級AI對手</div>
+                        <div>• 專屬遊戲房間</div>
+                        <div>• 個人數據分析</div>
+                        <div>• 生日特別獎勵</div>
+                    </div>
+                    <div style="color: var(--accent-gold); font-weight: 700;">等級要求: 7-9</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(0, 188, 212, 0.1)); border-radius: var(--border-radius-xl); padding: 25px; text-align: center; border: 2px solid var(--diamond-blue);">
+                    <div style="font-size: 3rem; color: var(--diamond-blue); margin-bottom: 15px;">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 style="color: var(--diamond-blue); margin-bottom: 10px;">鑽石會員</h3>
+                    <div style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                        <div>• 全部遊戲功能</div>
+                        <div>• 專家級AI對手</div>
+                        <div>• 私人遊戲房間</div>
+                        <div>• 專屬VIP經理</div>
+                        <div>• 豪華禮品兌換</div>
+                        <div>• 邀請專屬活動</div>
+                    </div>
+                    <div style="color: var(--diamond-blue); font-weight: 700;">等級要求: 10-12</div>
+                </div>
+            </div>
+            
+            <!-- 當前VIP狀態 -->
+            <div style="background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05)); border-radius: var(--border-radius-xl); padding: 30px; margin-top: 40px; text-align: center; border: 2px solid rgba(255,215,0,0.3);">
+                <h3 style="color: var(--accent-gold); margin-bottom: 20px;">您的VIP狀態</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                    <div>
+                        <div style="font-size: 4rem; color: var(--accent-gold);">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div style="font-weight: 700; color: var(--accent-gold); margin-top: 10px;">鑽石會員</div>
+                    </div>
+                    
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--accent-gold);">等級 5</div>
+                        <div style="color: rgba(255,255,255,0.7); margin-top: 5px;">VIP經驗值</div>
+                    </div>
+                    
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--accent-gold);">850/1000</div>
+                        <div style="color: rgba(255,255,255,0.7); margin-top: 5px;">升級進度</div>
+                    </div>
+                    
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--accent-gold);">+85%</div>
+                        <div style="color: rgba(255,255,255,0.7); margin-top: 5px;">勝率提升</div>
+                    </div>
+                </div>
+                
+                <!-- 升級進度條 -->
+                <div style="margin-top: 30px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: rgba(255,255,255,0.8);">
+                        <span>升級到等級 6</span>
+                        <span>85%</span>
+                    </div>
+                    <div style="height: 12px; background: rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+                        <div style="height: 100%; width: 85%; background: linear-gradient(90deg, var(--accent-gold), #ff8c00); border-radius: 6px;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 導航按鈕 -->
+            <div class="nav-buttons">
+                <button class="btn" onclick="showPage('tools-page')">
+                    <i class="fas fa-arrow-left"></i> 返回上一頁
+                </button>
+                <button class="btn btn-gold" onclick="showPage('main-page')">
+                    <i class="fas fa-home"></i> 返回主頁
+                </button>
+            </div>
+            
+            <!-- 免責聲明 -->
+            <div class="disclaimer" style="margin-top: 60px;">
+                <h4 style="color: var(--warning-color); margin-bottom: 15px;">
+                    <i class="fas fa-exclamation-triangle"></i> 重要聲明
+                </h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    本系統為純粹的博彩娛樂模擬體驗平台，僅供娛樂和教育目的。所有遊戲使用虛擬貨幣，不涉及真實金錢交易。本系統不鼓勵真實賭博行為，實際賭博可能導致嚴重的財務損失和心理問題。請理性遊戲，適度娛樂。
+                </p>
+            </div>
+        </div>
+        
+        <!-- 頁腳 -->
+        <footer class="main-footer">
+            <div style="margin-bottom: 20px;">
+                <div style="font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-gold);">豪華博彩娛樂模擬系統體驗</div>
+                <div style="color: rgba(255,255,255,0.6);">澳門至尊VIP娛樂平台 | 獨立頁面系統 | 真實模擬 | 專業工具</div>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
+                <div style="color: rgba(255,255,255,0.6);">
+                    <i class="fas fa-shield-alt"></i> 公平遊戲系統
+                </div>
+                <div style="color: rgba(255,255,255,0.6);">
+                    <i class="fas fa-mobile-alt"></i> 全平台支援
+                </div>
+                <div style="color: rgba(255,255,255,0.6);">
+                    <i class="fas fa-user-lock"></i> 隱私保護
+                </div>
+                <div style="color: rgba(255,255,255,0.6);">
+                    <i class="fas fa-headset"></i> 24/7 支援
+                </div>
+            </div>
+            
+            <div style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">
+                © 2023 豪華博彩娛樂模擬系統體驗 | 本系統使用虛擬貨幣，不涉及真實金錢交易 | 僅供娛樂和教育目的
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // 頁面系統
+        const pageSystem = {
+            currentPage: 'main-page',
+            previousPage: null,
+            pages: ['main-page', 'instructions-page', 'poker-page', 'mahjong-page', 'roulette-page', 'slot-page', 'tools-page', 'vip-page']
+        };
+        
+        // 遊戲狀態
+        const gameState = {
+            poker: {
+                betAmount: 500,
+                selectedBet: null
+            },
+            roulette: {
+                betAmount: 100,
+                selectedBet: null
+            },
+            slots: {
+                betAmount: 50,
+                lines: 3
+            }
+        };
+        
+        // 初始化系統
+        function initSystem() {
+            // 設置頁面切換事件
+            setupPageEvents();
+            
+            // 設置遊戲事件
+            setupGameEvents();
+            
+            // 顯示主頁
+            showPage('main-page');
+        }
+        
+        // 設置頁面事件
+        function setupPageEvents() {
+            // 滑動條事件
+            const pokerSlider = document.getElementById('poker-bet-slider');
+            if (pokerSlider) {
+                pokerSlider.addEventListener('input', function() {
+                    const betAmount = this.value;
+                    document.getElementById('poker-bet-amount').textContent = betAmount;
+                    gameState.poker.betAmount = parseInt(betAmount);
+                });
+            }
+            
+            const rouletteSlider = document.getElementById('roulette-bet-slider');
+            if (rouletteSlider) {
+                rouletteSlider.addEventListener('input', function() {
+                    const betAmount = this.value;
+                    document.getElementById('roulette-bet-amount').textContent = betAmount;
+                    gameState.roulette.betAmount = parseInt(betAmount);
+                });
+            }
+        }
+        
+        // 設置遊戲事件
+        function setupGameEvents() {
+            // 無需額外設置，事件已在HTML中直接綁定
+        }
+        
+        // 顯示頁面
+        function showPage(pageId) {
+            // 保存當前頁面為上一頁
+            if (pageSystem.currentPage !== pageId) {
+                pageSystem.previousPage = pageSystem.currentPage;
+            }
+            
+            // 隱藏所有頁面
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 顯示目標頁面
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                pageSystem.currentPage = pageId;
+                
+                // 滾動到頂部
+                window.scrollTo(0, 0);
+                
+                // 頁面特定初始化
+                switch(pageId) {
+                    case 'poker-page':
+                        initPokerPage();
+                        break;
+                    case 'roulette-page':
+                        initRoulettePage();
+                        break;
+                    case 'slot-page':
+                        initSlotPage();
+                        break;
+                }
+            }
+        }
+        
+        // 返回上一頁
+        function goBack() {
+            if (pageSystem.previousPage) {
+                showPage(pageSystem.previousPage);
+            } else {
+                showPage('main-page');
+            }
+        }
+        
+        // 初始化撲克頁面
+        function initPokerPage() {
+            // 設置初始卡片
+            const playerCards = ['A♠', 'K♠', 'Q♠', 'J♠', '10♠', '9♠', '8♠', '7♠'];
+            const card1 = playerCards[Math.floor(Math.random() * playerCards.length)];
+            const card2 = playerCards[Math.floor(Math.random() * playerCards.length)];
+            
+            document.getElementById('player-card1').textContent = card1;
+            document.getElementById('player-card2').textContent = card2;
+            
+            // 重置結果顯示
+            document.getElementById('poker-result').style.display = 'none';
+        }
+        
+        // 選擇撲克遊戲
+        function selectPokerGame(gameType) {
+            // 這裡可以實現遊戲類型切換
+            console.log(`選擇撲克遊戲: ${gameType}`);
+            
+            // 更新UI
+            const gameTitle = document.querySelector('#poker-page .game-header h2');
+            if (gameTitle) {
+                switch(gameType) {
+                    case 'texas':
+                        gameTitle.innerHTML = '<i class="fas fa-club"></i> 德州撲克模擬';
+                        break;
+                    case 'blackjack':
+                        gameTitle.innerHTML = '<i class="fas fa-spade"></i> 二十一點模擬';
+                        break;
+                    case 'baccarat':
+                        gameTitle.innerHTML = '<i class="fas fa-gem"></i> 百家樂模擬';
+                        break;
+                }
+            }
+        }
+        
+        // 玩德州撲克
+        function playTexasPoker() {
+            // 顯示載入狀態
+            const resultDiv = document.getElementById('poker-result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div style="margin-top: 20px; color: var(--accent-gold); font-size: 1.2rem;">
+                        遊戲進行中，與AI對手對戰...
+                    </div>
+                </div>
+            `;
+            
+            // 模擬遊戲過程
+            setTimeout(() => {
+                // 隨機決定勝負
+                const isWin = Math.random() > 0.5;
+                const winAmount = isWin ? 
+                    Math.floor(gameState.poker.betAmount * (1 + Math.random() * 2)) : 
+                    -gameState.poker.betAmount;
+                
+                // 顯示結果
+                resultDiv.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 4rem; color: ${isWin ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 20px;">
+                            <i class="fas fa-${isWin ? 'trophy' : 'times-circle'}"></i>
+                        </div>
+                        <div style="font-size: 2rem; color: ${isWin ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 10px;">
+                            ${isWin ? '恭喜獲勝！' : '很遺憾，這次輸了'}
+                        </div>
+                        <div style="font-size: 1.5rem; color: ${isWin ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 30px;">
+                            ${isWin ? '+' : ''}${formatCurrency(winAmount)} MOP
+                        </div>
+                        <div style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">
+                            ${isWin ? '您擊敗了AI對手，贏得了獎金！' : 'AI對手表現更好，下次再試試！'}
+                        </div>
+                        <button class="btn ${isWin ? 'btn-gold' : ''}" onclick="playTexasPoker()">
+                            <i class="fas fa-redo"></i> 再玩一次
+                        </button>
+                    </div>
+                `;
+                
+                // 滾動到結果
+                resultDiv.scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        }
+        
+        // 撲克動作
+        function texasPokerAction(action) {
+            console.log(`撲克動作: ${action}`);
+            // 這裡可以實現具體的撲克動作邏輯
+        }
+        
+        // 初始化輪盤頁面
+        function initRoulettePage() {
+            // 重置輪盤
+            document.getElementById('roulette-wheel').style.transform = 'rotate(0deg)';
+            document.getElementById('current-bet').textContent = '未選擇';
+            gameState.roulette.selectedBet = null;
+            
+            // 重置所有投注單元格
+            document.querySelectorAll('.bet-cell').forEach(cell => {
+                cell.classList.remove('selected');
+            });
+        }
+        
+        // 選擇輪盤投注
+        function selectRouletteBet(bet) {
+            // 重置所有投注單元格
+            document.querySelectorAll('.bet-cell').forEach(cell => {
+                cell.classList.remove('selected');
+            });
+            
+            // 標記選中的投注
+            const betCells = document.querySelectorAll(`.bet-cell`);
+            betCells.forEach(cell => {
+                if (cell.textContent === bet || 
+                    (bet === 'red' && cell.textContent === '紅色') ||
+                    (bet === 'black' && cell.textContent === '黑色') ||
+                    (bet === 'even' && cell.textContent === '偶數') ||
+                    (bet === 'odd' && cell.textContent === '奇數')) {
+                    cell.classList.add('selected');
+                }
+            });
+            
+            // 更新當前投注顯示
+            let betName = '';
+            switch(bet) {
+                case '0': betName = '數字 0 (綠色)'; break;
+                case 'red': betName = '紅色 (1:1)'; break;
+                case 'black': betName = '黑色 (1:1)'; break;
+                case 'even': betName = '偶數 (1:1)'; break;
+                case 'odd': betName = '奇數 (1:1)'; break;
+                default: betName = `數字 ${bet} (35:1)`;
+            }
+            
+            document.getElementById('current-bet').textContent = betName;
+            gameState.roulette.selectedBet = bet;
+        }
+        
+        // 旋轉輪盤
+        function spinRoulette() {
+            const wheel = document.getElementById('roulette-wheel');
+            const spinButton = document.getElementById('spin-button');
+            const currentBet = document.getElementById('current-bet');
+            
+            // 檢查是否選擇了投注
+            if (!gameState.roulette.selectedBet) {
+                alert('請先選擇投注項目！');
+                return;
+            }
+            
+            // 禁用按鈕
+            spinButton.disabled = true;
+            spinButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 旋轉中...';
+            
+            // 旋轉動畫
+            const spins = 5 + Math.random() * 3; // 5-8圈
+            const degrees = 360 * spins + Math.floor(Math.random() * 360);
+            
+            wheel.style.transform = `rotate(${degrees}deg)`;
+            
+            // 計算結果
+            setTimeout(() => {
+                // 計算最終數字 (0-36)
+                const normalizedDegrees = degrees % 360;
+                const winningNumber = Math.floor((normalizedDegrees / 360) * 37);
+                
+                // 確定顏色
+                let winningColor = 'green';
+                if (winningNumber !== 0) {
+                    const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
+                    winningColor = redNumbers.includes(winningNumber) ? 'red' : 'black';
+                }
+                
+                // 確定奇偶
+                const isEven = winningNumber % 2 === 0;
+                
+                // 檢查是否贏得投注
+                let isWin = false;
+                let winMultiplier = 1;
+                
+                if (gameState.roulette.selectedBet === '0' && winningNumber === 0) {
+                    isWin = true;
+                    winMultiplier = 35;
+                } else if (gameState.roulette.selectedBet === 'red' && winningColor === 'red') {
+                    isWin = true;
+                } else if (gameState.roulette.selectedBet === 'black' && winningColor === 'black') {
+                    isWin = true;
+                } else if (gameState.roulette.selectedBet === 'even' && isEven && winningNumber !== 0) {
+                    isWin = true;
+                } else if (gameState.roulette.selectedBet === 'odd' && !isEven && winningNumber !== 0) {
+                    isWin = true;
+                } else if (parseInt(gameState.roulette.selectedBet) === winningNumber) {
+                    isWin = true;
+                    winMultiplier = 35;
+                }
+                
+                // 顯示結果
+                const resultColor = winningColor === 'green' ? 'green' : winningColor === 'red' ? '#ff5252' : 'black';
+                
+                // 創建結果彈窗
+                const resultDiv = document.createElement('div');
+                resultDiv.style.position = 'fixed';
+                resultDiv.style.top = '50%';
+                resultDiv.style.left = '50%';
+                resultDiv.style.transform = 'translate(-50%, -50%)';
+                resultDiv.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.9), rgba(30,0,0,0.9))';
+                resultDiv.style.padding = '40px';
+                resultDiv.style.borderRadius = 'var(--border-radius-xl)';
+                resultDiv.style.zIndex = '1000';
+                resultDiv.style.textAlign = 'center';
+                resultDiv.style.border = '3px solid ' + resultColor;
+                resultDiv.style.boxShadow = 'var(--shadow-heavy)';
+                resultDiv.style.minWidth = '400px';
+                resultDiv.style.maxWidth = '90%';
+                
+                resultDiv.innerHTML = `
+                    <div style="font-size: 5rem; color: ${resultColor}; margin-bottom: 20px;">
+                        ${winningNumber}
+                    </div>
+                    <div style="font-size: 1.5rem; color: ${resultColor}; margin-bottom: 10px;">
+                        ${winningColor === 'green' ? '綠色' : winningColor === 'red' ? '紅色' : '黑色'} ${isEven ? '偶數' : '奇數'}
+                    </div>
+                    <div style="font-size: 2rem; color: ${isWin ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 20px;">
+                        ${isWin ? '恭喜贏得投注！' : '投注未中獎'}
+                    </div>
+                    <div style="font-size: 1.5rem; color: ${isWin ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 30px;">
+                        ${isWin ? '+' + formatCurrency(gameState.roulette.betAmount * winMultiplier) + ' MOP' : '-' + formatCurrency(gameState.roulette.betAmount) + ' MOP'}
+                    </div>
+                    <button class="btn ${isWin ? 'btn-gold' : ''}" onclick="this.parentElement.remove(); initRoulettePage();" style="margin-top: 20px;">
+                        繼續遊戲
+                    </button>
+                `;
+                
+                document.body.appendChild(resultDiv);
+                
+                // 重新啟用按鈕
+                spinButton.disabled = false;
+                spinButton.innerHTML = '<i class="fas fa-play"></i> 旋轉輪盤';
+            }, 4000);
+        }
+        
+        // 初始化老虎機頁面
+        function initSlotPage() {
+            // 更新總下注金額顯示
+            updateSlotTotalBet();
+        }
+        
+        // 更改老虎機下注金額
+        function changeSlotBet(change) {
+            let newBet = gameState.slots.betAmount + change;
+            if (newBet < 10) newBet = 10;
+            if (newBet > 500) newBet = 500;
+            
+            gameState.slots.betAmount = newBet;
+            document.getElementById('slot-bet-amount').textContent = newBet;
+            updateSlotTotalBet();
+        }
+        
+        // 更改老虎機支付線
+        function changeSlotLines(change) {
+            let newLines = gameState.slots.lines + change;
+            if (newLines < 1) newLines = 1;
+            if (newLines > 5) newLines = 5;
+            
+            gameState.slots.lines = newLines;
+            document.getElementById('slot-lines').textContent = newLines;
+            updateSlotTotalBet();
+        }
+        
+        // 更新老虎機總下注金額
+        function updateSlotTotalBet() {
+            const totalBet = gameState.slots.betAmount * gameState.slots.lines;
+            document.getElementById('slot-total-bet').textContent = formatCurrency(totalBet) + ' MOP';
+        }
+        
+        // 旋轉老虎機
+        function spinSlots() {
+            const spinButton = document.getElementById('slot-spin-button');
+            const reels = [
+                document.getElementById('slot-reel1'),
+                document.getElementById('slot-reel2'),
+                document.getElementById('slot-reel3'),
+                document.getElementById('slot-reel4'),
+                document.getElementById('slot-reel5')
+            ];
+            
+            const symbols = ['🍒', '7️⃣', '🔔', '⭐', '🍋'];
+            
+            // 禁用按鈕
+            spinButton.disabled = true;
+            spinButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 旋轉中...';
+            
+            // 旋轉動畫
+            let spins = 0;
+            const spinInterval = setInterval(() => {
+                reels.forEach(reel => {
+                    const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                    reel.textContent = randomSymbol;
+                });
+                spins++;
+                
+                if (spins > 20) {
+                    clearInterval(spinInterval);
+                    
+                    // 生成最終結果
+                    const results = [];
+                    reels.forEach(reel => {
+                        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                        reel.textContent = randomSymbol;
+                        results.push(randomSymbol);
+                    });
+                    
+                    // 檢查贏獎
+                    let winMultiplier = 0;
+                    let resultText = '';
+                    
+                    // 檢查中獎線（簡化版本）
+                    if (results[0] === results[1] && results[1] === results[2]) {
+                        // 三個相同
+                        if (results[0] === '🍒') {
+                            winMultiplier = 10;
+                            resultText = '三個櫻桃';
+                        } else if (results[0] === '7️⃣') {
+                            winMultiplier = 20;
+                            resultText = '三個7';
+                        } else if (results[0] === '🔔') {
+                            winMultiplier = 15;
+                            resultText = '三個鈴鐺';
+                        } else if (results[0] === '⭐') {
+                            winMultiplier = 8;
+                            resultText = '三個星星';
+                        } else if (results[0] === '🍋') {
+                            winMultiplier = 5;
+                            resultText = '三個檸檬';
+                        }
+                    } else if (results[0] === results[1] || results[1] === results[2] || results[2] === results[3]) {
+                        // 兩個相同
+                        winMultiplier = 3;
+                        resultText = '兩個相同符號';
+                    }
+                    
+                    // 計算獎金
+                    const totalBet = gameState.slots.betAmount * gameState.slots.lines;
+                    const winAmount = winMultiplier > 0 ? totalBet * winMultiplier : 0;
+                    
+                    // 顯示結果
+                    setTimeout(() => {
+                        // 創建結果彈窗
+                        const resultDiv = document.createElement('div');
+                        resultDiv.style.position = 'fixed';
+                        resultDiv.style.top = '50%';
+                        resultDiv.style.left = '50%';
+                        resultDiv.style.transform = 'translate(-50%, -50%)';
+                        resultDiv.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.9), rgba(30,0,0,0.9))';
+                        resultDiv.style.padding = '40px';
+                        resultDiv.style.borderRadius = 'var(--border-radius-xl)';
+                        resultDiv.style.zIndex = '1000';
+                        resultDiv.style.textAlign = 'center';
+                        resultDiv.style.border = '3px solid ' + (winAmount > 0 ? 'var(--accent-gold)' : 'var(--primary-color)');
+                        resultDiv.style.boxShadow = 'var(--shadow-heavy)';
+                        resultDiv.style.minWidth = '400px';
+                        resultDiv.style.maxWidth = '90%';
+                        
+                        resultDiv.innerHTML = `
+                            <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; font-size: 3rem;">
+                                ${results.map(symbol => `<div>${symbol}</div>`).join('')}
+                            </div>
+                            <div style="font-size: 2rem; color: ${winAmount > 0 ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 10px;">
+                                ${winAmount > 0 ? '恭喜中獎！' : '未中獎'}
+                            </div>
+                            <div style="font-size: 1.5rem; color: ${winAmount > 0 ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 20px;">
+                                ${resultText || '下次再試試！'}
+                            </div>
+                            <div style="font-size: 2.5rem; color: ${winAmount > 0 ? 'var(--accent-gold)' : 'var(--primary-color)'}; margin-bottom: 30px;">
+                                ${winAmount > 0 ? '+' + formatCurrency(winAmount) + ' MOP' : '-' + formatCurrency(totalBet) + ' MOP'}
+                            </div>
+                            <button class="btn ${winAmount > 0 ? 'btn-gold' : ''}" onclick="this.parentElement.remove();" style="margin-top: 20px;">
+                                繼續遊戲
+                            </button>
+                        `;
+                        
+                        document.body.appendChild(resultDiv);
+                        
+                        // 重新啟用按鈕
+                        spinButton.disabled = false;
+                        spinButton.innerHTML = '<i class="fas fa-play"></i> 旋轉';
+                    }, 500);
+                }
+            }, 100);
+        }
+        
+        // 玩麻將
+        function playMahjong() {
+            // 這裡可以實現麻將遊戲邏輯
+            console.log('開始麻將遊戲');
+        }
+        
+        // 麻將動作
+        function mahjongAction(action) {
+            console.log(`麻將動作: ${action}`);
+            // 這裡可以實現具體的麻將動作邏輯
+        }
+        
+        // 選擇工具
+        function selectTool(toolId) {
+            const toolDetail = document.getElementById('tool-detail');
+            toolDetail.innerHTML = '';
+            
+            switch(toolId) {
+                case 'odds':
+                    toolDetail.innerHTML = `
+                        <div class="game-simulation">
+                            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--diamond-blue);">
+                                <i class="fas fa-calculator"></i> 賠率計算器
+                            </h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                                <div>
+                                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.8);">下注金額 (MOP)</div>
+                                    <input type="number" class="bet-input" value="100" min="1" max="1000000" id="tool-bet-amount" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.7); border: 2px solid rgba(255,215,0,0.3); border-radius: var(--border-radius); color: white; font-size: 1.2rem;">
+                                </div>
+                                
+                                <div>
+                                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.8);">賠率</div>
+                                    <input type="number" class="bet-input" value="2.0" min="1" max="100" step="0.1" id="tool-odds" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.7); border: 2px solid rgba(255,215,0,0.3); border-radius: var(--border-radius); color: white; font-size: 1.2rem;">
+                                </div>
+                                
+                                <div>
+                                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.8);">勝率 (%)</div>
+                                    <input type="number" class="bet-input" value="50" min="1" max="100" id="tool-win-rate" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.7); border: 2px solid rgba(255,215,0,0.3); border-radius: var(--border-radius); color: white; font-size: 1.2rem;">
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; margin-bottom: 30px;">
+                                <button class="btn btn-blue" onclick="calculateOdds()">
+                                    <i class="fas fa-calculator"></i> 計算
+                                </button>
+                            </div>
+                            
+                            <div id="odds-result" style="background: rgba(0,188,212,0.1); padding: 25px; border-radius: var(--border-radius);">
+                                <div style="text-align: center; color: rgba(255,255,255,0.7);">
+                                    輸入參數後點擊「計算」按鈕查看結果
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'bankroll':
+                    toolDetail.innerHTML = `
+                        <div class="game-simulation">
+                            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--success-color);">
+                                <i class="fas fa-wallet"></i> 資金管理工具
+                            </h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                                <div>
+                                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.8);">總資金 (MOP)</div>
+                                    <input type="number" class="bet-input" value="100000" min="1000" max="10000000" id="total-bankroll" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.7); border: 2px solid rgba(255,215,0,0.3); border-radius: var(--border-radius); color: white; font-size: 1.2rem;">
+                                </div>
+                                
+                                <div>
+                                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.8);">每局下注比例 (%)</div>
+                                    <input type="number" class="bet-input" value="2" min="0.1" max="10" step="0.1" id="bet-percentage" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.7); border: 2px solid rgba(255,215,0,0.3); border-radius: var(--border-radius); color: white; font-size: 1.2rem;">
+                                </div>
+                                
+                                <div>
+                                    <div style="margin-bottom: 10px; color: rgba(255,255,255,0.8);">止損點 (%)</div>
+                                    <input type="number" class="bet-input" value="20" min="5" max="50" id="stop-loss" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.7); border: 2px solid rgba(255,215,0,0.3); border-radius: var(--border-radius); color: white; font-size: 1.2rem;">
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; margin-bottom: 30px;">
+                                <button class="btn btn-green" onclick="calculateBankroll()">
+                                    <i class="fas fa-calculator"></i> 計算
+                                </button>
+                            </div>
+                            
+                            <div id="bankroll-result" style="background: rgba(76,175,80,0.1); padding: 25px; border-radius: var(--border-radius);">
+                                <div style="text-align: center; color: rgba(255,255,255,0.7);">
+                                    輸入參數後點擊「計算」按鈕查看資金管理建議
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'analysis':
+                    toolDetail.innerHTML = `
+                        <div class="game-simulation">
+                            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--accent-gold);">
+                                <i class="fas fa-chart-pie"></i> 勝率分析
+                            </h3>
+                            
+                            <div style="text-align: center; margin-bottom: 40px;">
+                                <div style="display: inline-block; padding: 30px; background: rgba(0,0,0,0.3); border-radius: var(--border-radius-xl);">
+                                    <div style="font-size: 4rem; color: var(--accent-gold); margin-bottom: 10px;">68.5%</div>
+                                    <div style="color: rgba(255,255,255,0.8);">總勝率</div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: var(--border-radius);">
+                                <h4 style="color: var(--accent-gold); margin-bottom: 20px;">遊戲表現分析</h4>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="color: rgba(255,255,255,0.8);">德州撲克</span>
+                                        <span style="color: var(--accent-gold); font-weight: 700;">72.3% 勝率</span>
+                                    </div>
+                                    <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
+                                        <div style="height: 100%; width: 72.3%; background: var(--accent-gold); border-radius: 5px;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="color: rgba(255,255,255,0.8);">澳門麻將</span>
+                                        <span style="color: var(--success-color); font-weight: 700;">65.8% 勝率</span>
+                                    </div>
+                                    <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
+                                        <div style="height: 100%; width: 65.8%; background: var(--success-color); border-radius: 5px;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="color: rgba(255,255,255,0.8);">輪盤賭</span>
+                                        <span style="color: var(--primary-color); font-weight: 700;">48.7% 勝率</span>
+                                    </div>
+                                    <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
+                                        <div style="height: 100%; width: 48.7%; background: var(--primary-color); border-radius: 5px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 30px; padding: 20px; background: rgba(255,215,0,0.05); border-radius: var(--border-radius); border-left: 4px solid var(--accent-gold);">
+                                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">分析建議</h4>
+                                <div style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                                    1. 您在德州撲克表現優秀，建議增加該遊戲的投入時間<br>
+                                    2. 輪盤賭勝率偏低，建議減少該遊戲的投注金額<br>
+                                    3. 資金管理表現良好，請繼續保持當前風險控制水平<br>
+                                    4. 建議使用賠率計算器輔助下注決策
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            // 滾動到工具詳細區域
+            toolDetail.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // 計算賠率
+        function calculateOdds() {
+            const betAmount = parseFloat(document.getElementById('tool-bet-amount').value) || 0;
+            const odds = parseFloat(document.getElementById('tool-odds').value) || 0;
+            const winRate = parseFloat(document.getElementById('tool-win-rate').value) || 0;
+            
+            if (betAmount <= 0 || odds <= 0 || winRate <= 0) {
+                return;
+            }
+            
+            const potentialWin = betAmount * odds;
+            const expectedValue = (winRate / 100) * (potentialWin - betAmount) - ((100 - winRate) / 100) * betAmount;
+            const roi = (expectedValue / betAmount) * 100;
+            
+            const oddsResult = document.getElementById('odds-result');
+            oddsResult.innerHTML = `
+                <h4 style="color: var(--diamond-blue); margin-bottom: 15px;">計算結果</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                    <div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">潛在盈利</div>
+                        <div style="font-size: 1.5rem; color: var(--accent-gold);">${formatCurrency(potentialWin)} MOP</div>
+                    </div>
+                    
+                    <div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">期望值</div>
+                        <div style="font-size: 1.5rem; color: ${expectedValue >= 0 ? 'var(--success-color)' : 'var(--primary-color)'};">${formatCurrency(expectedValue)} MOP</div>
+                    </div>
+                    
+                    <div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">投資回報率</div>
+                        <div style="font-size: 1.5rem; color: ${roi >= 0 ? 'var(--success-color)' : 'var(--primary-color)'};">${roi.toFixed(2)}%</div>
+                    </div>
+                </div>
+                
+                <div style="padding: 15px; background: rgba(${expectedValue >= 0 ? '76,175,80' : '198,40,40'},0.1); border-radius: var(--border-radius); border-left: 4px solid ${expectedValue >= 0 ? 'var(--success-color)' : 'var(--primary-color)'};">
+                    <div style="color: ${expectedValue >= 0 ? 'var(--success-color)' : 'var(--primary-color)'}; font-weight: 700; margin-bottom: 5px;">
+                        ${expectedValue >= 0 ? '建議下注' : '不建議下注'}
+                    </div>
+                    <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                        ${expectedValue >= 0 ? 
+                          '根據計算結果，此下注具有正期望值，長期來看可能會帶來盈利。' : 
+                          '根據計算結果，此下注具有負期望值，長期來看可能會導致虧損。'}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 計算資金管理
+        function calculateBankroll() {
+            const totalBankroll = parseFloat(document.getElementById('total-bankroll').value) || 0;
+            const betPercentage = parseFloat(document.getElementById('bet-percentage').value) || 0;
+            const stopLoss = parseFloat(document.getElementById('stop-loss').value) || 0;
+            
+            if (totalBankroll <= 0 || betPercentage <= 0 || stopLoss <= 0) {
+                return;
+            }
+            
+            const betPerGame = totalBankroll * (betPercentage / 100);
+            const stopLossAmount = totalBankroll * (stopLoss / 100);
+            const maxGamesBeforeStopLoss = Math.floor(stopLossAmount / betPerGame);
+            
+            const bankrollResult = document.getElementById('bankroll-result');
+            bankrollResult.innerHTML = `
+                <h4 style="color: var(--success-color); margin-bottom: 15px;">資金管理建議</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                    <div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">每局下注金額</div>
+                        <div style="font-size: 1.5rem; color: var(--accent-gold);">${formatCurrency(betPerGame)} MOP</div>
+                    </div>
+                    
+                    <div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">止損金額</div>
+                        <div style="font-size: 1.5rem; color: var(--primary-color);">${formatCurrency(stopLossAmount)} MOP</div>
+                    </div>
+                    
+                    <div>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">最大連續輸局</div>
+                        <div style="font-size: 1.5rem; color: var(--diamond-blue);">${maxGamesBeforeStopLoss} 局</div>
+                    </div>
+                </div>
+                
+                <div style="padding: 15px; background: rgba(255,152,0,0.1); border-radius: var(--border-radius); border-left: 4px solid var(--warning-color);">
+                    <div style="color: var(--warning-color); font-weight: 700; margin-bottom: 5px;">
+                        風險控制建議
+                    </div>
+                    <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.5;">
+                        1. 每局下注不超過總資金的 ${betPercentage}%<br>
+                        2. 當日虧損達到 ${stopLoss}% 時停止遊戲<br>
+                        3. 連續輸掉 ${maxGamesBeforeStopLoss} 局後休息<br>
+                        4. 根據遊戲表現定期調整下注策略
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 格式化貨幣顯示
+        function formatCurrency(amount) {
+            return amount.toLocaleString('zh-HK', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+        }
+        
+        // 頁面加載完成後初始化系統
+        document.addEventListener('DOMContentLoaded', initSystem);
+    </script>
+</body>
+</html>
